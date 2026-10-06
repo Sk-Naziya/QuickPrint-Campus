@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Join the QuickPrint Campus early interest list.">
+  <title>Join the Interest List | QuickPrint Campus</title>
+  <link rel="stylesheet" href="interest.css">
+</head>
+<body>
+  <main class="interest-page">
+    <div class="interest-orb orb-one"></div>
+    <div class="interest-orb orb-two"></div>
+
+    <a class="back-home" href="index.html">← Back to QuickPrint Campus</a>
+
+    <section class="interest-card">
+      <div class="interest-brand"><span class="brand-mark">QP</span><span>QuickPrint <strong>Campus</strong></span></div>
+      <div class="interest-icon">🚀</div>
+      <p class="label">EARLY ACCESS</p>
+      <h1>Be first to skip the queue.</h1>
+      <p class="intro">Tell us where to reach you. We'll keep you updated about QuickPrint Campus and its launch.</p>
+
+      <form id="interestForm" class="interest-form">
+        <label for="name">Full Name</label>
+        <input id="name" name="name" type="text" placeholder="Enter your full name" autocomplete="name" required>
+
+        <label for="email">Email Address</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+
+        <label for="phone">Phone Number</label>
+        <input id="phone" name="phone" type="tel" placeholder="10-digit phone number" autocomplete="tel" required>
+
+        <button type="submit">🚀 Submit Details</button>
+        <div class="message-box" aria-live="polite"></div>
+      </form>
+
+      <p class="privacy-note">🔒 Your details are used only for QuickPrint Campus interest and launch updates.</p>
+      <a class="return-link" href="index.html">← Return to the landing page</a>
+    </section>
+  </main>
+  <script src="script.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>

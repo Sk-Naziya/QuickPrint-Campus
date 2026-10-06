@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Login | QuickPrint Campus</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body class="auth-page" data-page="student-login">
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="QuickPrint Campus home">
+      <span class="brand-mark">QP</span>
+      <span>QuickPrint <strong>Campus</strong></span>
+    </a>
+    <a class="btn btn-primary" href="register.html">Create Account</a>
+  </header>
+
+  <main class="auth-shell">
+    <section class="auth-card">
+      <p class="section-label">STUDENT LOGIN</p>
+      <h1>Welcome back.</h1>
+      <form id="loginForm" class="auth-form" data-action="login" data-redirect-to="student-dashboard.html">
+        <div class="field-group">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required>
+        </div>
+        <div class="field-group">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" placeholder="Enter your password" required>
+        </div>
+        <button class="primary-btn" type="submit">Login to Dashboard</button>
+        <div class="message-box" aria-live="polite"></div>
+      </form>
+      <p class="muted" style="margin-top:18px; text-align:center;">Need an account? <a href="register.html">Register here</a></p>
+      <p class="muted" style="text-align:center; margin-top:10px;">Admin access? <a href="admin-dashboard.html">Login as admin</a></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>

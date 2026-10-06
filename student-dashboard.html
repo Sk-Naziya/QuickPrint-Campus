@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard | QuickPrint Campus</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body class="dashboard-page" data-page="student-dashboard">
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="QuickPrint Campus home">
+      <span class="brand-mark">QP</span>
+      <span>QuickPrint <strong>Campus</strong></span>
+    </a>
+    <div class="page-toggle">
+      <a href="order.html" class="pill active">New Print Order</a>
+      <button type="button" class="pill" data-logout>Logout</button>
+    </div>
+  </header>
+
+  <main class="dashboard-shell">
+    <div class="dashboard-header">
+      <div>
+        <p class="section-label">STUDENT DASHBOARD</p>
+        <h1>Welcome, <span id="studentName">Student</span></h1>
+      </div>
+      <a href="order.html" class="primary-btn">+ New Print Order</a>
+    </div>
+
+    <div class="summary-grid">
+      <div class="stat-card"><span>Orders</span><strong id="orderCount">0</strong></div>
+      <div class="stat-card"><span>Pending</span><strong id="pendingCount">0</strong></div>
+      <div class="stat-card"><span>Paid</span><strong id="paidCount">0</strong></div>
+      <div class="stat-card"><span>Ready</span><strong id="readyCount">0</strong></div>
+    </div>
+
+    <section class="panel">
+      <div class="toolbar">
+        <div><strong>My Orders</strong></div>
+      </div>
+      <div id="ordersContainer" class="order-grid"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script src="auth.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

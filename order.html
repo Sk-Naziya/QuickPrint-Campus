@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Print Order | QuickPrint Campus</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body class="dashboard-page" data-page="order-page">
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="QuickPrint Campus home">
+      <span class="brand-mark">QP</span>
+      <span>QuickPrint <strong>Campus</strong></span>
+    </a>
+    <div class="page-toggle">
+      <a href="student-dashboard.html" class="pill">My Orders</a>
+      <button type="button" class="pill" data-logout>Logout</button>
+    </div>
+  </header>
+
+  <main class="dashboard-shell">
+    <div class="dashboard-header">
+      <div>
+        <p class="section-label">NEW PRINT ORDER</p>
+        <h1>Upload your document</h1>
+      </div>
+    </div>
+
+    <div class="order-layout">
+      <section class="left-pane">
+        <div class="order-card">
+          <form id="orderForm" class="order-form" enctype="multipart/form-data">
+            <div class="field-group">
+              <label for="fileUpload">Upload Document</label>
+              <div class="file-upload">
+                <input id="fileUpload" name="file" type="file" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" required>
+              </div>
+            </div>
+
+            <div class="inline-fields">
+              <div class="field-group">
+                <label for="copies">Copies</label>
+                <input id="copies" name="copies" type="number" min="1" value="1" required>
+              </div>
+              <div class="field-group">
+                <label for="colorMode">Print Type</label>
+                <select id="colorMode" name="color_mode">
+                  <option value="bw">Black & White</option>
+                  <option value="color">Color</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="inline-fields">
+              <div class="field-group">
+                <label for="paperSize">Paper Size</label>
+                <select id="paperSize" name="paper_size">
+                  <option value="A4">A4</option>
+                  <option value="A3">A3</option>
+                </select>
+              </div>
+              <div class="field-group">
+                <label for="pageCount">Pages</label>
+                <input id="pageCount" name="page_count" type="number" min="1" value="10">
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label for="pageRange">Page Range</label>
+              <input id="pageRange" name="page_range" type="text" placeholder="Example: 1-5, 8, 10-12">
+            </div>
+
+            <div class="inline-fields">
+              <div class="field-group">
+                <label for="pickupDate">Pickup Date</label>
+                <input id="pickupDate" name="pickup_date" type="date" required>
+              </div>
+              <div class="field-group">
+                <label for="pickupTime">Pickup Time</label>
+                <input id="pickupTime" name="pickup_time" type="time" required>
+              </div>
+            </div>
+
+            <button class="primary-btn" type="submit">Place Order</button>
+            <div id="orderMessage" class="message-box" aria-live="polite"></div>
+          </form>
+        </div>
+      </section>
+
+      <aside class="right-pane">
+        <div class="summary-card">
+          <p class="section-label">PRICE SUMMARY</p>
+          <div class="summary-list">
+            <div class="summary-row"><span>Pages</span><strong id="summaryPages">0</strong></div>
+            <div class="summary-row"><span>Copies</span><strong id="summaryCopies">0</strong></div>
+            <div class="summary-row"><span>Print Type</span><strong id="summaryType">Black & White</strong></div>
+          </div>
+          <div class="price-total"><span>Total</span><strong id="summaryTotal">₹0</strong></div>
+        </div>
+
+        <div id="paymentSection" class="checkout-box">
+          <div id="orderInfo" class="mini-list">
+            <div class="summary-row"><span>Order Number</span><strong id="paymentOrderNumber">—</strong></div>
+            <div class="summary-row"><span>Total</span><strong id="paymentTotal">₹0</strong></div>
+            <div class="summary-row"><span>Pickup</span><strong id="paymentPickup">—</strong></div>
+          </div>
+          <input type="hidden" id="paymentOrderId" value="">
+          <button id="payNowBtn" type="button" class="primary-btn" style="margin-top:18px; width:100%;">💳 Demo Payment</button>
+          <div id="confirmationBlock" class="confirmation-card"></div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+  <script src="auth.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

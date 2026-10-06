@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | QuickPrint Campus</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body class="dashboard-page" data-page="admin-dashboard">
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="QuickPrint Campus home">
+      <span class="brand-mark">QP</span>
+      <span>QuickPrint <strong>Campus</strong></span>
+    </a>
+    <div class="page-toggle">
+      <a href="index.html" class="pill">Home</a>
+      <button type="button" class="pill" data-logout>Logout</button>
+    </div>
+  </header>
+
+  <main class="dashboard-shell">
+    <section id="adminLoginCard" class="auth-card" style="display:block;">
+      <p class="section-label">ADMIN ACCESS</p>
+      <h1>Campus operations login.</h1>
+      <form id="adminLoginForm" class="auth-form" data-action="login" data-redirect-to="admin-dashboard.html">
+        <div class="field-group">
+          <label for="adminEmail">Email</label>
+          <input id="adminEmail" name="email" type="email" placeholder="admin@quickprintcampus.com" required>
+        </div>
+        <div class="field-group">
+          <label for="adminPassword">Password</label>
+          <input id="adminPassword" name="password" type="password" placeholder="Enter admin password" required>
+        </div>
+        <button class="primary-btn" type="submit">Log in as admin</button>
+        <div class="message-box" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <section id="adminDashboard" style="display:none;">
+      <div class="dashboard-header">
+        <div>
+          <p class="section-label">ADMIN DASHBOARD</p>
+          <h1>Print shop overview</h1>
+        </div>
+      </div>
+
+      <div class="summary-grid">
+        <div class="stat-card"><span>Total Orders</span><strong id="totalOrders">0</strong></div>
+        <div class="stat-card"><span>Pending Payment</span><strong id="pendingOrders">0</strong></div>
+        <div class="stat-card"><span>Paid</span><strong id="paidOrders">0</strong></div>
+        <div class="stat-card"><span>Ready for Pickup</span><strong id="readyOrders">0</strong></div>
+      </div>
+
+      <div class="panel">
+        <div class="toolbar">
+          <div>
+            <strong>Orders</strong>
+          </div>
+          <input id="adminSearch" class="search-input" type="search" placeholder="Search by order number">
+        </div>
+
+        <div class="table-wrap">
+          <table class="order-table">
+            <thead>
+              <tr>
+                <th>Order</th>
+                <th>Student</th>
+                <th>File</th>
+                <th>Paper</th>
+                <th>Pickup</th>
+                <th>Payment</th>
+                <th>Status</th>
+                <th>Update</th>
+                <th>QR</th>
+              </tr>
+            </thead>
+            <tbody id="adminOrdersBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script src="auth.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
